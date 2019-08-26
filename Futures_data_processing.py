@@ -90,7 +90,6 @@ class TXF_data():
         return data.reset_index(drop = True)
     
     def read_nm_futures(self, count = 1):
-        print("test\n")
         try:
             if self.__Before:
                 date = (self.input_datetime - dt.timedelta(days = count)).strftime("%Y-%m-%d")

@@ -24,8 +24,8 @@ class TXF_data():
         self.__third_wed = self.cal_thrid_wed(Y, m)
         self.__Before = self.set_Before()
         self.__Near = self.set_Near(m, N)
-        self.nm_futures_data = self.read_nm_futures()
         self.FWOSF_data = self.read_FWOSF()
+        self.nm_futures_data = self.read_nm_futures()
         self.close_price = self.find_Price()
         self.extractive_data = self.get_extractive_data()
         self.result = self.get_result()
@@ -89,12 +89,18 @@ class TXF_data():
                                 data['OSF_ORIG_TIME'], format = '%Y%m%d%H:%M:%S.%f').dt.time
         return data.reset_index(drop = True)
     
-    def read_nm_futures(self):
-        if self.__Before:
-            date = (self.input_datetime - dt.timedelta(days = 1)).strftime("%Y-%m-%d")
-        else:
-            date = self.input_datetime.strftime("%Y-%m-%d")
-        return pd.read_pickle('./nm_futures_minutes/future_'+ date +'.pickle')
+    def read_nm_futures(self, count = 1):
+        print("test\n")
+        try:
+            if self.__Before:
+                date = (self.input_datetime - dt.timedelta(days = count)).strftime("%Y-%m-%d")
+                #print(data)
+            else:
+                date = self.input_datetime.strftime("%Y-%m-%d")
+            
+            return pd.read_pickle('./nm_futures_minutes/future_'+ date +'.pickle')
+        except:
+            return self.read_nm_futures(count = count + 1)
    
     def find_Price(self):
         if self.__Before:
@@ -151,11 +157,13 @@ class TXF_data():
         return final
 #%%
 if __name__ == '__main__':
-    txf_data = TXF_data(2016, 9, 26, 8, 50, 1) # format = (y,m,d,h,m, N(1~3))
+    txf_data = TXF_data(2016, 9, 26, 10, 50, 1) # format = (y,m,d,h,m, N(1~3))
     result = txf_data.result
     data1 = txf_data.nm_futures_data
-    #a = txf_data.close_price
     data2 = txf_data.FWOSF_data
-    data3 = txf_data.extractive_data
+    
+    
+    #a = txf_data.close_price
+    #data3 = txf_data.extractive_data
     #a = txf_data.input_datetime
     #b = a + dt.timedelta(minutes = 3)

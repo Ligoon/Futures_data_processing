@@ -20,7 +20,7 @@ if __name__ == '__main__':
     data2 = txf_data.FWOSF_data
 ```
 ![](https://i.imgur.com/GPtxeFd.jpg)
-<div style="text-align:center"><img src="https://i.imgur.com/uhKsAYS.jpg" width="400"/></div>
+<p align="center"><img src="https://i.imgur.com/uhKsAYS.jpg" width="400"/></p>
 
 ---
 ### 9/19 (Mon) 8.30 a.m. <font face = 微軟正黑體>台指期近一</font>
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
 ![](https://i.imgur.com/u3w0wJW.jpg)
 
-<div style="text-align:center"><img src="https://i.imgur.com/E6meown.jpg" width="400"/></div>
+<p align="center"><img src="https://i.imgur.com/E6meown.jpg" width="400"/></p>
 
 ## Problem and Future Work
 - <font face=微軟正黑體>印出 data(string) 出現無窮遞迴 Error</font>

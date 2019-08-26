@@ -12,7 +12,7 @@
 ![](https://i.imgur.com/J76k7iS.jpg)
 
 ### 9/26 (Mon) 10.50 a.m. <font face = 微軟正黑體>台指期近一</font>
-```python=
+```python
 if __name__ == '__main__':
     txf_data = TXF_data(2016, 9, 26, 10, 50, 1) # format = (y,m,d,h,m, N(1~3))
     result = txf_data.result
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
 ---
 ### 9/19 (Mon) 8.30 a.m. <font face = 微軟正黑體>台指期近一</font>
-```python=
+```python
 if __name__ == '__main__':
     txf_data = TXF_data(2016, 9, 19, 8, 30, 1) # format = (y,m,d,h,m, N(1~3))
     result = txf_data.result
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
 ## Problem and Future Work
 - <font face=微軟正黑體>印出 data(string) 出現無窮遞迴 Error</font>
-```python=
+```python
 def read_nm_futures(self, count = 1):
     try:
         if self.__Before:

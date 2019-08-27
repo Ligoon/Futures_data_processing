@@ -176,6 +176,7 @@ class TXF_data():
             # You need to concat every temp_result type = Dataframe (11, 3)
             # to final result type = Dataframe (n, 11, 3)
             # =======================================
+            time = time + dt.timedelta(minutes = 1)
         return final_result
 #%%
 if __name__ == '__main__':
